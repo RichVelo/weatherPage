@@ -1,0 +1,20 @@
+main {
+    display: flex;
+    gap: 20px;
+}
+
+#weatherList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.dayWeatherCard {
+    max-width: 200px;
+    border: black 2px solid;
+    padding: 20px;
+}
+
+.weatherPic {
+    min-width: 150px;
+}

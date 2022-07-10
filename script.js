@@ -16,7 +16,7 @@ fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/service
 
 //function to display the data I want
 function displayDayWeatherData(day) {
-    return '<ul>' + 'Date: ' + day.datetime + ' Max Temp: ' + day.tempmax + ' Min Temp: ' + day.tempmin + ' Conditions: ' + day.conditions + ' Description: ' + day.description + '</ul>'
+    return '<div class="dayWeatherCard"' + '<img src="sun.jpg" alt="sun" />' + '<b>Date: </b>' + day.datetime + '<p><b> Max Temp: </b>' + day.tempmax + '</p>' + '<p><b> Min Temp: </b>' + day.tempmin + '</p>' + '<p><b> Conditions: </b>' + day.conditions + '</p>' + ' <p><b>Description: </b>' + day.description + '</p></div>'
 }
 
 
