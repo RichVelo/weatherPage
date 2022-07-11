@@ -1,20 +1,36 @@
+
+.html {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+}
+
 main {
     display: flex;
     gap: 20px;
 }
 
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 #weatherList {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
 }
 
 .dayWeatherCard {
-    max-width: 200px;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
     border: black 2px solid;
-    padding: 20px;
+    padding: 10px;
+    margin: 5px;
 }
 
-.weatherPic {
-    min-width: 150px;
+.dayWeatherCard, img{
+    width: 150px;
 }
+

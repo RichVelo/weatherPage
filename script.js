@@ -16,7 +16,45 @@ fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/service
 
 //function to display the data I want
 function displayDayWeatherData(day) {
-    return '<div class="dayWeatherCard">' + '<img src="sun.jpg" alt="sun" />' + '<p><b>Date: </b>' + day.datetime + '</p>' + '<p><b> Max Temp: </b>' + day.tempmax + '</p>' + '<p><b> Min Temp: </b>' + day.tempmin + '</p>' + '<p><b> Conditions: </b>' + day.conditions + '</p>' + ' <p><b>Description: </b>' + day.description + '</p></div>'
+
+    let weatherCondition = day.conditions;
+    let sun = '<img src="sun.png" alt="sunny day" />'
+    let partlyCloudy = '<img src="partlyCloudy.png" alt="cloudy day" />'
+    let windy = '<img src="wind.png" alt="windy day" />'
+    let snow = '<img src="snow.png" alt="snowy day" />'
+    let thunderStorm = '<img src="thunderStorm.png" alt="stormy day" />'
+    let cloudy = '<img src="cloudy.png" alt="cloudy day" />'
+    let rain = '<img src="rain.png" alt="rainy day" />'
+    let image
+
+    switch (weatherCondition) {
+        case 'Partially cloudy':
+            image = partlyCloudy
+            break
+        case 'Overcast':
+            image = cloudy
+            break
+        case 'Clear':
+            image = sun
+            break
+        case 'Rain':
+            image = rain
+            break
+        case 'Wind':
+            image = windy
+            break
+        case 'Thunder storms':
+            image = thunderStorm
+            break
+        case 'Snow':
+            image = snow
+            break
+        default:
+            image = rain
+    }
+
+
+    return '<div class="dayWeatherCard">' + image + '<p><b>Date: </b>' + day.datetime.toLocaleString('en-GB') + '</p>' + '<p><b> Max Temp: </b>' + day.tempmax + '</p>' + '<p><b> Min Temp: </b>' + day.tempmin + '</p>' + '<p><b> Conditions: </b>' + day.conditions + '</p>' + ' <p><b>Description: </b>' + day.description + '</p></div>'
 }
 
 
