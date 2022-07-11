@@ -1,5 +1,5 @@
 //fetching the date from api based on my chosen locale
-fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Great%20Missenden?unitGroup=metric&key=JRQGFHWMLJJEMRQJ9Z6GXQ8GC&contentType=json", {
+fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Great%20Missenden/next4days?unitGroup=metric&key=JRQGFHWMLJJEMRQJ9Z6GXQ8GC&contentType=json", {
     "method": "GET",
     "headers": {
     }
@@ -53,8 +53,21 @@ function displayDayWeatherData(day) {
             image = rain
     }
 
-
-    return '<div class="dayWeatherCard">' + image + '<p><b>Date: </b>' + day.datetime.toLocaleString('en-GB') + '</p>' + '<p><b> Max Temp: </b>' + day.tempmax + '</p>' + '<p><b> Min Temp: </b>' + day.tempmin + '</p>' + '<p><b> Conditions: </b>' + day.conditions + '</p>' + ' <p><b>Description: </b>' + day.description + '</p></div>'
+    return '<div class="dayWeatherCard">' +
+                '<div class="cardImage">'
+                    + image +
+                '</div>' +
+                    '<div class="cardData">'
+                + '<p><b>Date: </b>'
+                + day.datetime + '</p>'
+                + '<p><b> Max Temp: </b>'
+                + day.tempmax + '</p>'
+                + '<p><b> Min Temp: </b>'
+                + day.tempmin + '</p>'
+                + '<p><b> Conditions: </b>'
+                + day.conditions + '</p>'
+                + ' <p><b>Description: </b>'
+                + day.description + '</p></div></div>'
 }
 
 

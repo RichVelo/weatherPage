@@ -1,36 +1,73 @@
-
-.html {
-    font-family: 'Open Sans', sans-serif;
-    font-size: 10px;
-}
-
-main {
-    display: flex;
-    gap: 20px;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0 auto;
 }
 
 header {
-    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    margin-top: 10px;
+    padding-top: 20px;
+    width: 80%;
+    height: 10vh;
     display: flex;
     justify-content: center;
+    background-color: #81acf0;
+}
+
+main {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+}
+
+.displaysGMWeather, h2 {
+    font-size: 15px;
+}
+
+footer {
+    display: flex;
+    margin-top: 20px;
+    padding: 20px;
+    justify-content: center;
+    width: 80%;
 }
 
 #weatherList {
+    margin-top: 20px;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 15px;
 }
 
 .dayWeatherCard {
+    display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 350px;
-    border: black 2px solid;
-    padding: 10px;
+    min-width: 200px;
+    box-shadow: 5px 10px 18px #000000;
+    padding-left: 10px;
+    padding-right: 10px;
     margin: 5px;
+    font-size: 16px;
+
+    transition: all .2s ease-in-out;
+}
+
+.dayWeatherCard:hover{
+    transform: scale(1.1);
 }
 
 .dayWeatherCard, img{
     width: 150px;
+}
+
+.dayWeatherCard, p{
+    align-content: flex-start;
 }
 
