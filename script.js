@@ -17,7 +17,10 @@ fetch("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/service
 //function to display the data I want
 function displayDayWeatherData(day) {
 
+    // setting condition for the day to update image
     let weatherCondition = day.conditions;
+
+    //setting suitable image to condition
     let sun = '<img src="sun.png" alt="sunny day" />'
     let partlyCloudy = '<img src="partlyCloudy.png" alt="cloudy day" />'
     let windy = '<img src="wind.png" alt="windy day" />'
@@ -25,8 +28,11 @@ function displayDayWeatherData(day) {
     let thunderStorm = '<img src="thunderStorm.png" alt="stormy day" />'
     let cloudy = '<img src="cloudy.png" alt="cloudy day" />'
     let rain = '<img src="rain.png" alt="rainy day" />'
+
+    //image variable to be set on each iteration using above variables
     let image
 
+    //switch statement to check thorough condition in weatherCondition and set appropriate pic to image variable
     switch (weatherCondition) {
         case 'Partially cloudy':
             image = partlyCloudy
@@ -53,6 +59,7 @@ function displayDayWeatherData(day) {
             image = rain
     }
 
+    //returning the card to be displayed pulling everything together (format for readability)
     return '<div class="dayWeatherCard">' +
                 '<div class="cardImage">'
                     + image +
